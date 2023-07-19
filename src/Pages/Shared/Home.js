@@ -14,11 +14,11 @@ const Home = () => {
         <div>
             <div className='flex '>
 
-                <div class="menu  bg-blue-950 w-72 h-screen ">
-                    <div className=' fixed ms-14 mt- -6 h-32 w-32'>
+                <div class="menu  bg-[#17254E] h-screen w-72  ">
+                    <div className='  ms-14 mt-7  w-32'>
                         <img className='h-20 w-20' src={logo} alt="" />
                     </div>
-                    <div className='fixed mt-32'><ul className='ms-5 '>
+                    <div className=' mt-24'><ul className='ms-5 '>
                         <li className='ms-2 '>
                             <Link to='dashboard'>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>

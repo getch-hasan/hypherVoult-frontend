@@ -1,19 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useCountDown from 'react-countdown-hook';
 import { useStopwatch, useTimer } from 'react-timer-hook';
 
 
 
 const Dashboard = () => {
-    const initialTime = 60 * 1000; // initial time in milliseconds, defaults to 60000
-    const interval = 1000; // 
+    const targetDate = new Date('2023-12-31T23:59:59'); // Set your target date and time here
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
-    const [timeLeft, { start, }] = useCountDown(initialTime, interval);
-    React.useEffect(() => {
-        start();
-    }, []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTimeLeft(calculateTimeLeft(targetDate));
+        }, 1000);
 
+        return () => {
+            clearInterval(interval);
+        };
+    }, [targetDate]);
 
+    function calculateTimeLeft(target) {
+        const now = new Date().getTime();
+        const difference = target - now;
+
+        if (difference <= 0) {
+            return {
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            };
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        return {
+            days,
+            hours,
+            minutes,
+            seconds,
+        };
+    }
     return (
         <div className='mt-5'>
             <div className='grid justify-between grid-cols-3 items-center'>
@@ -31,7 +59,7 @@ const Dashboard = () => {
                 </div>
                 <div className='grid items-center rounded-lg bg-gradient-to-r from-indigo-500 w-11/12 h-40 from-10% via-sky-500  to-slate-400'>
                     <p className='text-white'>next rebase</p>
-                    <h1 className='text-white font-bold text-lg'>{timeLeft}</h1>
+                    <h1 className='text-white font-bold text-lg'><p>{timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}</p></h1>
                     <p className='text-white'>average hyper vault holding </p>
                     <h1 className='text-white font-bold text-lg'>$8465401</h1>
                 </div>

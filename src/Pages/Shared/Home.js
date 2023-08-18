@@ -11,10 +11,10 @@ import Calculator from '../Calculator/Calculator';
 
 const Home = () => {
     return (
-        <div>
-            <div className='flex '>
+        <div className=''>
+            <div className='flex relative  '>
 
-                <div class="menu  bg-[#17254E] h-screen w-72  ">
+                <div class="menu fixed  bg-[#17254E]  min-h-screen w-72  ">
                     <div className='  ms-14 mt-7  w-32'>
                         <img className='h-20 w-20' src={logo} alt="" />
                     </div>
@@ -58,9 +58,9 @@ const Home = () => {
                         </li>
                     </ul></div>
                 </div>
-                <div className='bg-blue-950 ms-4 rounded-md    h-14 w-4/5'>
-                    <div className='grid  items-center'>
-                        <p className='text-end mt-1 me-4 font-semibold text-white '>HyperVault <span className='font-light'>$0.019</span>  USD <button className='bg-secondary btn btn-secondary'>Connect wallet</button></p>
+                <div className='bg-blue-950 ms-4 rounded-md  absolute right-0  h-14 w-4/5'>
+                    <div className='grid sticky top-0 items-center'>
+                        <p className='text-end mt-1 me-4 font-semibold text-white '>HyperVault <span className='font-light'>$0.019</span>  USD <button className='bg-[#24D5A9] btn btn-secondary'>Connect wallet</button></p>
 
                     </div>
                     <Routes>

@@ -8,6 +8,7 @@ import HypherVault from '../HypherVault/HypherVault';
 import HypherSwap from '../HypherSwap/HypherSwap';
 import Docs from '../Docs/Docs';
 import Calculator from '../Calculator/Calculator';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -72,6 +73,7 @@ const Home = () => {
                         <Route path='/hypherSwap' element={<HypherSwap></HypherSwap>}></Route>
                         <Route path='/Docs' element={<Docs></Docs>}></Route>
                     </Routes>
+                    <Footer></Footer>
 
                 </div>
 

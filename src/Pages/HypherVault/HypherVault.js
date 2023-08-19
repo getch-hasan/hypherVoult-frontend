@@ -45,7 +45,8 @@ const HypherVault = () => {
                             <hr />
                             <p className='flex justify-between'><p>Token Amount to Lock  </p> <button className=' border  px-1 rounded-2xl font-light  '>max</button></p>
                             <input className='border-none p-2 rounded-lg text-right' type="text" value='0.0' />
-                            <button className='rounded-md p-2 bg-[#24D5A9] text-[#000000]'>lock</button></div>
+                            <button className='rounded-md p-2 bg-[#24D5A9] text-[#000000]'>lock</button>
+                        </div>
                     </div>
                 </div>
             </div>

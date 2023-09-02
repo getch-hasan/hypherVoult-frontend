@@ -32,7 +32,25 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.hasan {
+  border-radius: 80px 0px 0px 80px;
+  background: var(--brand-secondary, #24D5A9);
+}
+.hasan::after{
+  display: block;
+  content:"djhfdjf";
+  background-color: red;
+  z-index: 9999999;
+  height: 50px;
+  width: 50px;
+  margin-bottom: -50px;
+  border-radius: -80px 0px 0px -80px;
+  
+  
 }
